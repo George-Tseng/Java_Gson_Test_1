@@ -1,5 +1,6 @@
 package gsonTwoLayerTest;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import com.google.gson.Gson;
@@ -48,6 +49,10 @@ public class GsonOutput {
 		String jsonListHDDString0 = gson0.toJson(hddList0);
 		
 		System.out.println(jsonListHDDString0);
-		File_Conf.writeResultFile(jsonListHDDString0);
+		try {
+			File_Conf.writeResultFile(jsonListHDDString0);
+		} catch(IOException ioe) {
+			ioe.printStackTrace();
+		}
 	}
 }
